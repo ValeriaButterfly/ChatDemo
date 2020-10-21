@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fFO-Jf-efR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ekT-py-Zxh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QBg-46-UJD"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-JJ-08J">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-NA-tsf">
+                                        <rect key="frame" x="23" y="8" width="328" height="33"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="FMk-71-bBu"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="ZXK-LB-R5K"/>
+                                        </connections>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lr6-L4-8LD">
+                                        <rect key="frame" x="359" y="8" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="sendMessageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Wf-yh-1sA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UDf-NA-tsf" firstAttribute="leading" secondItem="iUq-JJ-08J" secondAttribute="leading" constant="23" id="5XB-UL-cRf"/>
+                                    <constraint firstAttribute="trailing" secondItem="UDf-NA-tsf" secondAttribute="trailing" constant="63" id="7be-Uz-Ehh"/>
+                                    <constraint firstAttribute="bottom" secondItem="UDf-NA-tsf" secondAttribute="bottom" constant="8" id="LcP-hv-p9U"/>
+                                    <constraint firstAttribute="trailing" secondItem="lr6-L4-8LD" secondAttribute="trailing" constant="9" id="nW9-xr-cJa"/>
+                                    <constraint firstItem="lr6-L4-8LD" firstAttribute="leading" secondItem="UDf-NA-tsf" secondAttribute="trailing" constant="8" id="oxH-4i-lu9"/>
+                                    <constraint firstItem="lr6-L4-8LD" firstAttribute="top" secondItem="UDf-NA-tsf" secondAttribute="top" id="qcb-vn-7r0"/>
+                                    <constraint firstAttribute="height" constant="49" id="sap-3S-88U"/>
+                                    <constraint firstItem="UDf-NA-tsf" firstAttribute="top" secondItem="iUq-JJ-08J" secondAttribute="top" constant="8" id="yOO-tV-Gz6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fFO-Jf-efR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ca-yJ-e8b"/>
+                            <constraint firstItem="iUq-JJ-08J" firstAttribute="top" secondItem="fFO-Jf-efR" secondAttribute="bottom" id="GkM-th-D3Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iUq-JJ-08J" secondAttribute="bottom" id="Kmm-0M-Gkr"/>
+                            <constraint firstItem="fFO-Jf-efR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KoC-Jr-inI"/>
+                            <constraint firstItem="iUq-JJ-08J" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OX0-Z9-dxB"/>
+                            <constraint firstItem="iUq-JJ-08J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QwM-e6-tAQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fFO-Jf-efR" secondAttribute="trailing" id="w9L-RI-WXb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sendButton" destination="lr6-L4-8LD" id="TEe-y5-eQv"/>
+                        <outlet property="tableView" destination="fFO-Jf-efR" id="aYj-Wi-zzg"/>
+                        <outlet property="textView" destination="UDf-NA-tsf" id="1Uk-3a-MAj"/>
+                        <outlet property="textViewHC" destination="FMk-71-bBu" id="KHH-UG-TWc"/>
+                        <outlet property="viewTextBC" destination="Kmm-0M-Gkr" id="nkN-98-CrO"/>
+                        <outlet property="viewTextHC" destination="sap-3S-88U" id="geC-VK-JrB"/>
+                        <outlet property="viewToUp" destination="iUq-JJ-08J" id="ncZ-mk-f6s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>
